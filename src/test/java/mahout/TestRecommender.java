@@ -20,8 +20,18 @@ import org.junit.Test;
 
 public class TestRecommender extends TestCase{
 	
-	private static final String FILE_PATH = "C:/tez/data/movielensDataset/ratingsComma.dat";
+	/**
+	 * comma separated version of movielens 1m dataset 
+	 * http://grouplens.org/datasets/movielens/
+	 */
+	private static final String FILE_PATH = "C:/movielensDataset/ratingsComma.dat";
 	private static DataModel dataModel;
+	
+	/**
+	 * test for item based recommender
+	 * @throws TasteException
+	 * @throws IOException
+	 */
 	@Test
 	public void testItemBased() throws TasteException, IOException {
 		dataModel= getDataModel();		
@@ -31,6 +41,11 @@ public class TestRecommender extends TestCase{
 		assertEquals(20, recommendedItems.size());
 	}
 	
+	/**
+	 * test for svd recommender
+	 * @throws TasteException
+	 * @throws IOException
+	 */
 	@Test
 	public void testSVD() throws TasteException, IOException {
 		dataModel= getDataModel();		
